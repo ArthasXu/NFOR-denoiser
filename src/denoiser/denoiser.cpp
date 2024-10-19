@@ -205,7 +205,6 @@ Pixmap3f nforDenoiser(RenderBuffer3f image, std::vector<RenderBufferF> features)
         return collaborativeRegression(combinedResult, combinedResult, finalFeatures, combinedResultVar, 3, 9, 1.0f);
     }
     else{
-        std::cout<<6<<std::endl;
         int w = image.buffer->w(), h = image.buffer->h();
 
         // Feature cross-prefiltering (section 5.1)
@@ -331,7 +330,6 @@ void loadInputBuffersFromDirectory(RenderBuffer3f &image, std::vector<RenderBuff
         normalFiles = {"normal_1280.exr", "normal_1280.exr", "normal_1280.exr", "normalVariance.exr"};
     }
 
-    std::cout<<2<<std::endl;
 
     //Color
     auto buffer = loadPixmap<Vec3f>(Path(workingDirectory, colorFiles[0]), true);
@@ -345,8 +343,6 @@ void loadInputBuffersFromDirectory(RenderBuffer3f &image, std::vector<RenderBuff
         image.bufferB = std::move(bufferB);
         image.bufferVariance = std::move(bufferVariance);
     }
-
-    std::cout<<3<<std::endl;
 
     //Albedo
     auto albedoBuffer = loadPixmap<Vec3f>(Path(workingDirectory, albedoFiles[0]), true);
@@ -364,8 +360,6 @@ void loadInputBuffersFromDirectory(RenderBuffer3f &image, std::vector<RenderBuff
         }
     }
 
-    std::cout<<4<<std::endl;
-
     //Normal
     auto normalBuffer = loadPixmap<Vec3f>(Path(workingDirectory, normalFiles[0]), true);
     if (normalBuffer) {
@@ -382,7 +376,6 @@ void loadInputBuffersFromDirectory(RenderBuffer3f &image, std::vector<RenderBuff
         }
     }
 
-    std::cout<<5<<std::endl;
 }
 
 template<typename Texel>
@@ -450,8 +443,6 @@ int main(int argc, const char *argv[])
     // }
 
     ThreadUtils::startThreads(max(ThreadUtils::idealThreadCount() - 1, 1u));
-
-    std::cout<<1<<std::endl;
 
     RenderBuffer3f image;
     std::vector<RenderBufferF> features;

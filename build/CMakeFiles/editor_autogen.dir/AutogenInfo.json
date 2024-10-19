@@ -1,0 +1,347 @@
+{
+	"BUILD_DIR" : "/home/xkh/Desktop/tungsten/build/editor_autogen",
+	"CMAKE_BINARY_DIR" : "/home/xkh/Desktop/tungsten/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/xkh/Desktop/tungsten/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/xkh/Desktop/tungsten",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/xkh/Desktop/tungsten",
+	"HEADERS" : 
+	[
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/BsdfDisplay.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_BsdfDisplay.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/ColorPickButton.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_ColorPickButton.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/LoadErrorDialog.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_LoadErrorDialog.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/MainWindow.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_MainWindow.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/PreviewWindow.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_PreviewWindow.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/PropertyWindow.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_PropertyWindow.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/QtLambda.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_QtLambda.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/QtUtils.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_QtUtils.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/RenderWindow.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_RenderWindow.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/ShapeInput.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_ShapeInput.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/ShapePainter.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_ShapePainter.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/TextureDisplay.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_TextureDisplay.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/TransformGizmo.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_TransformGizmo.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/VerticalScrollArea.hpp",
+			"Mu",
+			"W4MZGBQALC/moc_VerticalScrollArea.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/opengl/BufferObject.hpp",
+			"Mu",
+			"VTVCGUP5JD/moc_BufferObject.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/opengl/GlUtils.hpp",
+			"Mu",
+			"VTVCGUP5JD/moc_GlUtils.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/opengl/MatrixStack.hpp",
+			"Mu",
+			"VTVCGUP5JD/moc_MatrixStack.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/opengl/OpenGL.hpp",
+			"Mu",
+			"VTVCGUP5JD/moc_OpenGL.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/opengl/RenderTarget.hpp",
+			"Mu",
+			"VTVCGUP5JD/moc_RenderTarget.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/opengl/Shader.hpp",
+			"Mu",
+			"VTVCGUP5JD/moc_Shader.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/opengl/ShaderObject.hpp",
+			"Mu",
+			"VTVCGUP5JD/moc_ShaderObject.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/opengl/Texture.hpp",
+			"Mu",
+			"VTVCGUP5JD/moc_Texture.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/opengl/VertexBuffer.hpp",
+			"Mu",
+			"VTVCGUP5JD/moc_VertexBuffer.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/BoolProperty.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_BoolProperty.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/BsdfProperties.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_BsdfProperties.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/BsdfProperty.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_BsdfProperty.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/FloatProperty.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_FloatProperty.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/IntProperty.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_IntProperty.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/ListProperty.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_ListProperty.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/MediumProperty.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_MediumProperty.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/PathProperty.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_PathProperty.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/PrimitiveProperties.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_PrimitiveProperties.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/Property.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_Property.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/PropertyForm.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_PropertyForm.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/StringProperty.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_StringProperty.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/TextureProperty.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_TextureProperty.cpp"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/VectorProperty.hpp",
+			"Mu",
+			"X3F7DZLUXP/moc_VectorProperty.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/xkh/Desktop/tungsten/build/editor_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/xkh/Desktop/tungsten/build/editor_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"CONSTEXPR=constexpr",
+		"EMBREE_STATIC_LIB=1",
+		"INSTALL_PREFIX=\"/usr/local\"",
+		"JPEG_AVAILABLE",
+		"LODEPNG_NO_COMPILE_DISK=1",
+		"OPENEXR_AVAILABLE",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_OPENGL_LIB",
+		"QT_WIDGETS_LIB",
+		"RAPIDJSON_HAS_STDSTRING=1",
+		"STBI_NO_STDIO=1",
+		"USE_IPV6=1"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/xkh/Desktop/tungsten/src/core",
+		"/home/xkh/Desktop/tungsten/src/thirdparty",
+		"/home/xkh/Desktop/tungsten/src/thirdparty/embree/include",
+		"/home/xkh/Desktop/tungsten/src",
+		"/usr/include/eigen3",
+		"/usr/include/OpenEXR",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtOpenGL",
+		"/usr/include",
+		"/usr/include/c++/9",
+		"/usr/include/x86_64-linux-gnu/c++/9",
+		"/usr/include/c++/9/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/xkh/Desktop/tungsten/build/editor_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/home/xkh/Desktop/tungsten/build/CMakeFiles/editor_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "/home/xkh/Desktop/tungsten/build/CMakeFiles/editor_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/home/xkh/Desktop/tungsten/src/editor/BsdfDisplay.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/ColorPickButton.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/LoadErrorDialog.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/MainWindow.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/PreviewWindow.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/PropertyWindow.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/QtLambda.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/QtUtils.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/RenderWindow.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/ShapeInput.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/ShapePainter.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/TextureDisplay.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/TransformGizmo.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/VerticalScrollArea.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/main.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/opengl/BufferObject.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/opengl/GlUtils.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/opengl/MatrixStack.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/opengl/OpenGL.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/opengl/RenderTarget.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/opengl/Shader.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/opengl/ShaderObject.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/opengl/Texture.cpp", "Mu" ],
+		[ "/home/xkh/Desktop/tungsten/src/editor/opengl/VertexBuffer.cpp", "Mu" ],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/BoolProperty.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/BsdfProperties.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/BsdfProperty.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/FloatProperty.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/IntProperty.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/ListProperty.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/MediumProperty.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/PathProperty.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/PrimitiveProperties.cpp",
+			"Mu"
+		],
+		[ "/home/xkh/Desktop/tungsten/src/editor/properties/Property.cpp", "Mu" ],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/PropertyForm.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/StringProperty.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/TextureProperty.cpp",
+			"Mu"
+		],
+		[
+			"/home/xkh/Desktop/tungsten/src/editor/properties/VectorProperty.cpp",
+			"Mu"
+		]
+	],
+	"VERBOSITY" : 0
+}

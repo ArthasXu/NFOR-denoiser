@@ -1,0 +1,2 @@
+/usr/bin/ar qc libthirdparty.a  CMakeFiles/thirdparty.dir/src/thirdparty/civetweb/civetweb.c.o CMakeFiles/thirdparty.dir/src/thirdparty/lodepng/lodepng.cpp.o CMakeFiles/thirdparty.dir/src/thirdparty/sobol/sobol.cpp.o CMakeFiles/thirdparty.dir/src/thirdparty/stbi/stb_image.c.o CMakeFiles/thirdparty.dir/src/thirdparty/miniz/miniz.c.o CMakeFiles/thirdparty.dir/src/thirdparty/skylight/ArHosekSkyModel.cpp.o CMakeFiles/thirdparty.dir/src/thirdparty/tribox/tribox.cpp.o
+/usr/bin/ranlib libthirdparty.a
