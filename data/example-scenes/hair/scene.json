@@ -118,5 +118,11 @@
         "spp_step": 16,
         "checkpoint_interval": "0",
         "timeout": "0"
-    }
+    },
+    "output_buffers": [
+        {"type": "color",  "hdr_output_file": "color.exr",  "sample_variance": true, "two_buffer_variance": true},
+        {"type": "depth",  "hdr_output_file": "depth.exr",  "sample_variance": true, "two_buffer_variance": true},
+        {"type": "albedo", "hdr_output_file": "albedo.exr", "sample_variance": true, "two_buffer_variance": true},
+        {"type": "normal", "hdr_output_file": "normal.exr", "sample_variance": true, "two_buffer_variance": true}
+    ]
 }

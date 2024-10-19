@@ -28,7 +28,7 @@ public:
 
     void save(const Path &path, bool rgb = true) const
     {
-        ImageIO::saveHdr(path, reinterpret_cast<const float *>(_pixels.get()), _w, _h, rgb ? 3 : 1);
+        ImageIO::saveHdr(path, reinterpret_cast<const float *>(_pixels.get()), _w, _h, rgb ? 4 : 1);
     }
 
     void clear()

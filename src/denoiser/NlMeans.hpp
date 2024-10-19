@@ -46,7 +46,8 @@ static inline void convertWeight(float &out, const Vec3f &in)
 template<typename WeightTexel, typename Texel>
 void nlMeansWeights(Pixmap<WeightTexel> &weights, Pixmap<Texel> &distances, Pixmap<Texel> &tmp,
         const Pixmap<Texel> &guide, const Pixmap<Texel> &variance,
-        Box2i srcRect, int F, float k, int dx, int dy, const float varianceScale = 1.0f)
+        Box2i srcRect, int F, float k, int dx, int dy, const float varianceScale = 1.0f,
+        bool hasVariance = false)
 {
     const float Epsilon = 1e-7f;
     const float MinCenterWeight = 1e-4f;
@@ -69,11 +70,17 @@ void nlMeansWeights(Pixmap<WeightTexel> &weights, Pixmap<Texel> &distances, Pixm
     // From Rousselle et al.'s paper
     auto squaredDist = [&](Vec2i p) {
         Vec2i q = p + delta;
-        Texel varP = variance[p]*varianceScale;
-        Texel varQ = variance[q]*varianceScale;
-        Texel squaredDiff = sqr(guide[p] - guide[q]) - (varP + min(varP, varQ));
-        Texel dist = squaredDiff/((varP + varQ)*k*k + Epsilon);
-        return min(dist, Texel(DistanceClamp));
+        if(hasVariance){
+            Texel varP = variance[p]*varianceScale;
+            Texel varQ = variance[q]*varianceScale;
+            Texel squaredDiff = sqr(guide[p] - guide[q]) - (varP + min(varP, varQ));
+            Texel dist = squaredDiff/((varP + varQ)*k*k + Epsilon);
+            return min(dist, Texel(DistanceClamp));
+        }
+        else{
+            Texel dist= sqr(guide[p] - guide[q]) - 1/(k*k);
+            return min(dist, Texel(DistanceClamp));
+        }
     };
 
     for (int y : paddedClippedSrc.range(1))
@@ -134,7 +141,7 @@ Pixmap<Texel> nlMeans(const Pixmap<Texel> &image, const Pixmap<Texel> &guide, co
                 Box2i shiftedRect(Vec2i(-dx, -dy), Vec2i(w - dx, h - dy));
                 shiftedRect.intersect(tileRect);
 
-                nlMeansWeights(data.weights, data.tmpBufA, data.tmpBufB, guide, variance, shiftedRect, F, k, dx, dy, varianceScale);
+                nlMeansWeights(data.weights, data.tmpBufA, data.tmpBufB, guide, variance, shiftedRect, F, k, dx, dy, varianceScale, false);
 
                 for (int y : shiftedRect.range(1)) {
                     for (int x : shiftedRect.range(0)) {
@@ -194,7 +201,7 @@ public:
                 for (int j = 0; j < w*h; ++j) {
                     image   [j][idx] = _params[k].image   [j];
                     guide   [j][idx] = _params[k].guide   [j];
-                    variance[j][idx] = _params[k].variance[j];
+                    // variance[j][idx] = _params[k].variance[j];
                 }
             }
 

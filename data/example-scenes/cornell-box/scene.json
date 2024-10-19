@@ -285,9 +285,7 @@
         "enable_volume_light_sampling": true
     },
     "renderer": {
-        "output_file": "TungstenRender.png",
-        "resume_render_file": "TungstenRenderState.dat",
-        "overwrite_output_files": false,
+        "overwrite_output_files": true,
         "adaptive_sampling": false,
         "enable_resume_render": false,
         "stratified_sampler": false,
@@ -295,6 +293,13 @@
         "spp": 64,
         "spp_step": 16,
         "checkpoint_interval": "0",
-        "timeout": "0"
+        "timeout": "0",
+        "resume_render_file": "TungstenRenderState.dat",
+        "output_buffers": [
+            {"type": "color",  "ldr_output_file": "color.png",  "hdr_output_file": "color.exr",  "sample_variance": true, "two_buffer_variance": true},
+            {"type": "depth",  "ldr_output_file": "depth.png",  "hdr_output_file": "depth.exr",  "sample_variance": true, "two_buffer_variance": true},
+            {"type": "albedo", "ldr_output_file": "albedo.png", "hdr_output_file": "albedo.exr", "sample_variance": true, "two_buffer_variance": true},
+            {"type": "normal", "ldr_output_file": "normal.png", "hdr_output_file": "normal.exr", "sample_variance": true, "two_buffer_variance": true}
+        ]
     }
 }

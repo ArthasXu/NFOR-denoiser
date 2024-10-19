@@ -69,7 +69,7 @@ Pixmap3f collaborativeRegression(const Pixmap3f &image, const Pixmap3f &guide,
         for (int dy = -R, idxW = 0; dy <= R; ++dy)
             for (int dx = -R; dx <= R; ++dx, ++idxW)
                 nlMeansWeights(data.weights[idxW], data.tmpBufA, data.tmpBufB, guide, imageVariance,
-                        srcRect, F, k, dx, dy, 2.0f);
+                        srcRect, F, k, dx, dy, 2.0f, false);
 
         for (int y = srcRect.min().y(); y < srcRect.max().y(); ++y) {
             for (int x = srcRect.min().x(); x < srcRect.max().x(); ++x) {

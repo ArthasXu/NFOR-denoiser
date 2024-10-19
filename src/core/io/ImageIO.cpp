@@ -527,18 +527,27 @@ std::unique_ptr<uint8[]> loadLdr(const Path &path, TexelConversion request, int 
 
 bool savePfm(const Path &path, const float *img, int w, int h, int channels)
 {
-    if (channels != 1 && channels != 3)
+    if (channels != 1 && channels != 3 && channels != 4)
         return false;
 
     OutputStreamHandle out = FileUtils::openOutputStream(path);
     if (!out)
         return false;
 
-    *out << ((channels == 1) ? "Pf" : "PF") << '\n';
-    *out << w << " " << h << '\n';
-    *out << -1.0 << '\n';
-    for (int y = 0; y < h; ++y)
-        out->write(reinterpret_cast<const char *>(img + (h - y - 1)*w*channels), w*channels*sizeof(float));
+    *out << "#?RADIANCE\n" << "# Written by saveExr\n";
+    
+    *out << w << " " << h << " 4 " << -1.0 << "\n";
+    
+    for (int y = 0; y < h; ++y) {
+        for (int x = 0; x < w; ++x) {
+            for (int c = 0; c < 3; ++c) { 
+                *out << img[(y * w + x) * 3 + c] << " ";
+                std::cout<<img[(y * w + x) * 3 + c]<<" ";
+            }
+            *out << 1.0 << "\n";
+            std::cout<<1.0<<"\n";
+        }
+    }
 
     return true;
 }
@@ -555,27 +564,40 @@ bool saveExr(const Path &path, const float *img, int w, int h, int channels)
 
     try {
 
-    Imf::Header header(w, h, 1.0f, Imath::V2f(0, 0), 1.0f, Imf::INCREASING_Y, Imf::PIZ_COMPRESSION);
-    Imf::FrameBuffer frameBuffer;
+        Imf::Header header(w, h, 1.0f, Imath::V2f(0, 0), 1.0f, Imf::INCREASING_Y, Imf::PIZ_COMPRESSION);
+        Imf::FrameBuffer frameBuffer;
 
-    std::unique_ptr<half[]> data(new half[w*h*channels]);
-    for (int i = 0; i < w*h*channels; ++i)
-        data[i] = half(img[i]);
+        // Create a buffer for the output data
+        std::unique_ptr<half[]> data(new half[w * h * 4]); // Allocate for RGBA
 
-    const char *channelNames[] = {"R", "G", "B", "A"};
-    for (int i = 0; i < channels; ++i) {
-        const char *channelName = (channels == 1) ? "Y" : channelNames[i];
-        header.channels().insert(channelName, Imf::Channel(Imf::HALF));
-        frameBuffer.insert(channelName, Imf::Slice(Imf::HALF, reinterpret_cast<char *>(data.get() + i),
-                sizeof(half)*channels, sizeof(half)*channels*w));
-    }
+        // Populate the buffer with RGB data and set A to 1
+        for (int y = 0; y < h; ++y) {
+            for (int x = 0; x < w; ++x) {
+                int index = (y * w + x) * 3;
+                int outIndex = (y * w + x) * 4; // for RGBA
 
-    ExrOStream out(std::move(outputStream));
-    Imf::OutputFile file(out, header);
-    file.setFrameBuffer(frameBuffer);
-    file.writePixels(h);
+                data[outIndex + 0] = half(img[index + 0]); // R
+                data[outIndex + 1] = half(img[index + 1]); // G
+                data[outIndex + 2] = half(img[index + 2]); // B
+                data[outIndex + 3] = half(1.0f);            // A = 1
+            }
+        }
 
-    return true;
+        // Set up channels in the header
+        const char *channelNames[] = {"R", "G", "B", "A"};
+        for (int i = 0; i < 4; ++i) {
+            const char *channelName = channelNames[i];
+            header.channels().insert(channelName, Imf::Channel(Imf::HALF));
+            frameBuffer.insert(channelName, Imf::Slice(Imf::HALF, reinterpret_cast<char *>(data.get() + i),
+                    sizeof(half) * 4, sizeof(half) * 4 * w));
+        }
+
+        ExrOStream out(std::move(outputStream));
+        Imf::OutputFile file(out, header);
+        file.setFrameBuffer(frameBuffer);
+        file.writePixels(h);
+
+        return true;
 
     } catch(const std::exception &e) {
         std::cout << "OpenEXR writer failed: " << e.what() << std::endl;
